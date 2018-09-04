@@ -33,7 +33,7 @@ class App extends Component {
 
 
     componentDidMount() {
-        fetchData('http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=48&format=json').then(data => (
+        fetchData('https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=48&format=json').then(data => (
             this.setState({
                 artistsData: data.artists.artist.sort((a, b) => (+b.listeners) - (+a.listeners)),
                 isLoading: false,
@@ -42,7 +42,7 @@ class App extends Component {
             })
         ));
 
-        fetchData('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=48&format=json').then(data => (
+        fetchData('https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=48&format=json').then(data => (
             this.setState({
                 songsData: data.tracks.track,
                 isLoading: false,
@@ -51,7 +51,7 @@ class App extends Component {
             })
         ));
 
-        fetchData('http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=rock&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=48&format=json').then(data => (
+        fetchData('https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=rock&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=48&format=json').then(data => (
             this.setState({
                 albumsData: data.albums.album,
                 isLoading: false,
@@ -91,19 +91,19 @@ class App extends Component {
         if (this.state.searchValue === '') {
             return
         }
-        fetchData(`http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${this.state.searchValue}&api_key=412e51e107155c7ffabd155a02371cbd&limit=28&format=json`)
+        fetchData(`https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${this.state.searchValue}&api_key=412e51e107155c7ffabd155a02371cbd&limit=28&format=json`)
             .then(({results}) => (
                 this.setState({
                     artistsData: results.artistmatches.artist
                 })));
 
-        fetchData(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.searchValue}&api_key=412e51e107155c7ffabd155a02371cbd&limit=28&format=json`)
+        fetchData(`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${this.state.searchValue}&api_key=412e51e107155c7ffabd155a02371cbd&limit=28&format=json`)
             .then(({results}) => (
                 this.setState({
                     albumsData: results.albummatches.album
                 })));
 
-        fetchData(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.state.searchValue}&api_key=412e51e107155c7ffabd155a02371cbd&limit=28&format=json`)
+        fetchData(`https://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.state.searchValue}&api_key=412e51e107155c7ffabd155a02371cbd&limit=28&format=json`)
             .then(({results}) => (
                 this.setState({
                     songsData: results.trackmatches.track
