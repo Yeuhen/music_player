@@ -1,0 +1,12 @@
+1) Sidebar
+1.1) Logo
+1.2) Menu
+1.2.1) Sub__menu
+
+2) Search (input+button)
+2.1) search form
+2.2) search tabs
+
+3) main
+
+4) card artist
