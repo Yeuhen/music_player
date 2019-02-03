@@ -2,7 +2,6 @@
 import React from 'react';
 import Chart from '../Chart/Chart';
 import Youtube from '../Youtube/Youtube';
-
 import './Search.css';
 
 const Search = ({value, onChange, handlerSearch, handlerYoutube, youtubeIsActive, videoId, showSidebar}) => {

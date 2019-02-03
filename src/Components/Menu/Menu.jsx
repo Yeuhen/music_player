@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Menu.css';
 import SubMenu from '../Submenu/Submenu';
-// import IconsImg from '../icons/icons.svg';
-
+import './Menu.css';
 
 const Menu = ({menu}) => {
     return (
+
         <ul>
             {menu.map(el => !el.submenu ?
                 <li className="menu__item" key={el.text}>
-                    {/*<IconsImg name='main'/>*/}
                     <a href={el.link} className="menu__link">{el.text}</a>
                 </li> :
                 <li className="menu__item" key={el.text}>

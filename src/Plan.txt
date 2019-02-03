@@ -1,5 +1,5 @@
 1) Sidebar
-1.1) Logo
+1.1) IndexModule
 1.2) Menu
 1.2.1) Sub__menu
 

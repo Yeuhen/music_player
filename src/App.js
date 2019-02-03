@@ -4,11 +4,11 @@ import Search from './Components/Search/Search';
 import ArtistPage from './Components/ArtistPage/ArtistPage';
 import SongsPage from './Components/SongsPage/SongsPage';
 import AlbumPage from './Components/AlbumPage/AlbumPage';
+import Logo from './Components/Logo';
 import {fetchData, getLocal, getYoutube} from './helpers/fetch'; // export не дефолтний
 import {Switch, Route} from 'react-router-dom';
 // import Youtube from './Components/Youtube/Youtube';
-import Loader from 'react-loader-spinner';
-
+import Spinner from './ui-kit/Spinner';
 import './App.css';
 
 
@@ -127,7 +127,7 @@ class App extends Component {
         }
     };
 
-    showSidebar =() =>{
+    showSidebar = () => {
         this.setState({
             showAside: !this.state.showAside,
         })
@@ -140,6 +140,7 @@ class App extends Component {
             <div className='wrapper'>
                 <div className='container'>
                     <Sidebar showAside={showAside}/>
+                    <Logo/>
                     <main className='main'>
                         <Search value={searchValue}
                                 onChange={this.inputChange}
@@ -150,12 +151,7 @@ class App extends Component {
                                 showSidebar={this.showSidebar}
                         />
                         {isLoading ? <div className='loader'>
-                                <Loader
-                                    type="Audio"
-                                    color="#00BFFF"
-                                    height="100"
-                                    width="100"
-                                />
+                                <Spinner/>
                             </div>
                             :
                             <div>

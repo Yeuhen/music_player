@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine:700');
+
 :root {
+    --tangerineFont: 'Tangerine', cursive;
+
     --family: 'Roboto', sans-serif;
     --big: 1.125rem;
     --medium: 0.875rem;
@@ -12,4 +16,5 @@
     --serch: #262626;
     --main: #1a1a1a;
     --card: #2e2e2e;
+    --gold: #FFFA38;
 }

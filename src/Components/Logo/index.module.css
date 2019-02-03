@@ -1,0 +1,11 @@
+/*.logo {*/
+    /*display: block;*/
+/*}*/
+
+
+.title {
+    font-family: var(--tangerineFont);
+    font-size: 4rem;
+    text-align: center;
+    color: var(--gold);
+}
